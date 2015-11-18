@@ -20,7 +20,7 @@
   when: fifo_gpg_key.rc != 0
 
 - name: Install/Upgrade LeoFS Gateway
-  command: "yes | pkg_add -u http://release.project-fifo.net/pkg/'{{ leofs_release }}'/'{{ leofs_gateway_version_required }}'.tgz"
+  command: "pkg_add -u http://release.project-fifo.net/pkg/'{{ leofs_release }}'/'{{ leofs_gateway_version_required }}'.tgz"
   when: leofs_version_installed.stdout != "{{ leofs_gateway_version_required }}"
 
 - name: Configure LeoFS Gateway
